@@ -12,15 +12,16 @@ class MainController extends Controller {
   }
 
   public function webquests() {
+    $scope = array();
     $Webquest = new Webquest();
     // $Webquest->thema = "Einführung Distributionen";
     // $Webquest->save();
 
     // $Webquest::create(['thema' => "Open-Source Anwendungen"]);
 
-    return $Webquest::all();
+    $scope["webquests"] = $Webquest::all();
 
-    // return view('webquests');
+    return view('webquests', $scope);
   }
 
   public function lehrplan_integration() {
